@@ -1,58 +1,42 @@
-##  Template Modulo Terraform
-Este repositorio deve conter a estrutura básica para a criação de uma modulo do [terraform](https://www.terraform.io/). 
+# IAC Modulo Projeto GCP
 
- $`` module-example/``
- 
- |--- main.tf  
- |--- variable.tf  
- |--- outputs.tf  
- |--- version.tf
-
-
- Esses são os nomes de arquivos recomendados para um modulo mínimo, mesmo se estiverem vazios. 
- 
- ``main.tf`` deve ser o ponto de entrada principal.
- Para um modulo simples, pode ser aqui que todos os recursos que são criados. Para uma modulo complexo pode ser divido em varios arquivos.
- 
- ``variables.tf e outputs.tf`` deve conter as declarações das variaves e as saidas respectivamente.
- 
- ``versions.tf`` deve contem as versões dos recursos/provedores
-
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| Terraform | >= 0.13.0 |
+| terraform | >= 0.13.0 |
+| google | 3.81.0 |
 
 ## Providers
-  
+
 | Name | Version |
 |------|---------|
-| local | n/a |
+| local | 2.1.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| local_file | resource |
-| local_file | data source |
+| [local_file.ferramenta-1](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [local_file.ferramenta-2](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
+| [local_file.ferramenta_1](https://registry.terraform.io/providers/hashicorp/local/latest/docs/data-sources/file) | data source |
+| [local_file.ferramenta_2](https://registry.terraform.io/providers/hashicorp/local/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|ferramenta_1 | exemplo de variavel | `string` | `"terraform"` | no |
-|ferramenta_2 | exemplo de variavel | `string` | `"ansible"` | no |
-|programa | exemplo de variavel | `string` | `"mentoria-iac"` | no |
+| ferramenta\_1 | exemplo de variavel | `string` | `"terraform"` | no |
+| ferramenta\_2 | exemplo de variavel | `string` | `"ansible"` | no |
+| programa | exemplo de variavel | `string` | `"mentoria-iac"` | no |
 
 ## Outputs
- 
+
 | Name | Description |
 |------|-------------|
-|ferramentas | exemplo de saida |
-
+| ferramentas | exemplo de saidas |
+<!-- END_TF_DOCS -->
 ## Testar localmente
 
-Aqui você descreve como a pessoa que utilizar esse módulo pode testar localmente. Coloque todos os detalhes necessários para executar localmente.
-
-  
+Para testar o modulo localmente, você pode executar um `make test`.
