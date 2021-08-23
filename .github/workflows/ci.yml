@@ -22,7 +22,7 @@ jobs:
 
       - name: Terraform Validate
         id: validate
-        run: make terraform-validate
+        run: make terraform-init terraform-validate
 
       - name: Terraform Plan
         id: plan
