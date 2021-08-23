@@ -28,6 +28,6 @@ jobs:
         id: plan
         run: make plan
 
-      - name: Terraform Plan
-        id: plan
+      - name: Terraform Test
+        id: test
         run: make test        
